@@ -33,11 +33,11 @@ int main() {
 		in.seekg(0, std::ios::beg);
 
 		while (std::getline(in, line) && !reoccurence_found) {
-			if (seen_values.find(total) != seen_values.end()) { // if total is already in set
+			auto result = seen_values.insert(total); // add it to set
+			if (!result.second) { // if it could not be inserted
 				first_reocurrence = total;
 				reoccurence_found = true;
 			}
-			else seen_values.insert(total); // add it to set
 
 			long value = std::stol(line);
 
