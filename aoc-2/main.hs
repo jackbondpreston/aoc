@@ -29,8 +29,8 @@ calculateChecksum input = a * b
 
 sameChars :: String -> String -> Int
 sameChars (x:xs) (y:ys) 
-                | x == y    = 1 + sameChars xs ys
-                | otherwise = sameChars xs ys
+    | x == y    = 1 + sameChars xs ys
+    | otherwise = sameChars xs ys
 sameChars [] [] = 0
 
 getCorrectBoxes :: [String] -> [String]
