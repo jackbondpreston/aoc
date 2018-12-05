@@ -7,13 +7,14 @@ function swapCase(c) {
 }
 
 function collapsePolymer(polymer) {
-    for (let i = 0; i < polymer.length; i++) {
-        let c = polymer[i];
-    
-        if (i !== polymer.length - 1 && c === swapCase(polymer[i + 1])) {
+    let i = 0;
+    while(i < polymer.length - 1) {
+        if (polymer[i] === swapCase(polymer[i + 1])) {
             polymer.splice(i, 2);
             i = Math.max(-1, i - 2);
         }
+
+        i++;
     }
 
     return polymer.length;
